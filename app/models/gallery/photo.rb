@@ -20,7 +20,7 @@ class Gallery::Photo < ActiveRecord::Base
   attr_accessor :thumb_crop_x, :thumb_crop_y, :thumb_crop_w, :thumb_crop_h, 
                 :full_crop_x, :full_crop_y, :full_crop_w, :full_crop_h
 
-  attr_accessible :gallery
+  attr_accessible :gallery, :title, :image, :description
   
   # -- Relationships --------------------------------------------------------
   belongs_to :gallery
