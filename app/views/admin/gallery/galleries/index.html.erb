@@ -27,8 +27,8 @@
         </td>
         <td class='action_links'>
           <%= link_to 'Ver fotos', admin_gallery_gallery_photos_path(gallery), :class => "btn btn-small btn-success" %>
-          <%= link_to t('.edit'), edit_admin_gallery_gallery_path(gallery), :class => "btn btn-small" %>
-          <%= link_to t('.delete'), admin_gallery_gallery_path(gallery), :method => :delete, :data => {:confirm => t('.are_you_sure')}, :class => "btn btn-small btn-dange" %>
+          <%= link_to 'Editar', edit_admin_gallery_gallery_path(gallery), :class => "btn btn-small" %>
+          <%= link_to 'Excluir', admin_gallery_gallery_path(gallery), :method => :delete, :confirm => 'Tem certeza?', :class => "btn btn-small btn-success" %>
         </td>
       </tr>
     <% end %>
