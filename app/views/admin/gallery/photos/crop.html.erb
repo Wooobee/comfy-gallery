@@ -42,15 +42,15 @@
 <%= comfy_gallery_form_for @photo, :as => :photo, :url => { :action => :update } do |form| %>
 
   <% if @photo.gallery.force_ratio_full? %>
-    <%= form.simple_field 'Tamanho total' do %>
+    <p>Tamanho total </p>
       <%= image_tag @photo.image.url(:admin_full), :id => 'crop_full' %>
-    <% end %>
+   
   <% end %>
   <br />
   <% if @photo.gallery.force_ratio_thumb? %>
-    <%= form.simple_field 'Miniatura' do %>
+    <p>Miniatura </p>
       <%= image_tag @photo.image.url(:admin_full), :id => 'crop_thumb' %>
-    <% end %>
+    
   <% end %>
 
 
