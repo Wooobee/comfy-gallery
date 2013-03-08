@@ -8,9 +8,9 @@
     identifier: Identificador
   activerecord:
     models:
-      gallery: Galeria
+      gallery/gallery: Galeria
     attributes:
-      galery:
+      gallery/gallery:
         identifier: Identificador
         title: Título da galeria
         description: Descrição
