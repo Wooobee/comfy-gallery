@@ -1,4 +1,5 @@
-
+# encoding: utf-8
+pt-BR:
   # -- Models ---------------------------------------------------------------
   attributes:
     label: Nome
@@ -8,7 +9,7 @@
     identifier: Identificador
   activerecord:
     models:
-      gallery/gallery: Galeria
+      gallery/gallery: "Galeria"
     attributes:
       gallery/gallery:
         identifier: Identificador
