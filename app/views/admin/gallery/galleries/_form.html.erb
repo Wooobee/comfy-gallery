@@ -4,11 +4,12 @@
 
 <%= form.text_field :full_width %>
 <%= form.text_field :full_height %>
-<%= form.check_box :force_ratio_full, :label => "Force Ratio" %>
+<%= form.check_box :force_ratio_full, :label => "Forçar Ratio" %>
 <%= form.text_field :thumb_width %>
 <%= form.text_field :thumb_height %>
-<%= form.check_box :force_ratio_thumb, :label => "Force Ratio" %>
+<%= form.check_box :force_ratio_thumb, :label => "Forçar Ratio" %>
 
 <%= render :partial => 'cms_admin/categories/form', :object => form if defined?(ComfortableMexicanSofa) %>
-
-<%= form.submit 'Save' %>
+<div class="form-actions">
+	<%= form.submit t(@gallery.new_record?? '.create' : '.update'), :class => 'btn btn-primary' %>
+</div>

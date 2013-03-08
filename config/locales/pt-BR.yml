@@ -1,0 +1,20 @@
+
+  # -- Models ---------------------------------------------------------------
+  attributes:
+    label: Nome
+    slug: Identificador
+    parent_id: Pai
+    content: Conteúdo
+    identifier: Identificador
+  activerecord:
+    models:
+      gallery: Galeria
+    attributes:
+      galery:
+        identifier: Identificador
+        title: Título da galeria
+        description: Descrição
+        full_width: Largura Máxima
+        full_height: Altura Máxima
+        thumb_width: Largura da miniatura
+        thumb_height: Altura da miniatura

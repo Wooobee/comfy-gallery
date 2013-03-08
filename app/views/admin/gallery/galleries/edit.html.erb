@@ -1,5 +1,6 @@
-<h1>Editing <%= @gallery.title %></h1>
-
+<div class="page-header">
+	<h2>Editar <%= @gallery.title %></h21>
+</div>
 <%= comfy_gallery_form_for @gallery, :as => :gallery, :url => { :action => :update } do |form|%>
   <%= render :partial => form %>
 <% end %>

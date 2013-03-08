@@ -11,9 +11,9 @@
 <table class='table table-hover table-bordered'>
   <tbody class="sortable">
     <tr>
-      <th> Preview </th>
+      <th> Imagem </th>
       <th> Nome </th>
-      <th> Actions </th>
+      <th> Ações </th>
     </tr>
     <% @galleries.each do |gallery| %>
       <tr>
@@ -26,9 +26,9 @@
           <%= link_to gallery.title, admin_gallery_gallery_photos_path(gallery) %>
         </td>
         <td class='action_links'>
-          <%= link_to 'Show Photos', admin_gallery_gallery_photos_path(gallery) %>
-          <%= link_to 'Edit', edit_admin_gallery_gallery_path(gallery) %>
-          <%= link_to 'Delete', admin_gallery_gallery_path(gallery), :method => :delete, :confirm => 'Are you sure?' %>
+          <%= link_to 'Ver fotos', admin_gallery_gallery_photos_path(gallery), :class => "btn btn-small btn-success" %>
+          <%= link_to t('.edit'), edit_admin_gallery_gallery_path(gallery), :class => "btn btn-small" %>
+          <%= link_to t('.delete'), admin_gallery_gallery_path(gallery), :method => :delete{:confirm => t('.are_you_sure')}, :class => "btn btn-small btn-dange" %>
         </td>
       </tr>
     <% end %>
