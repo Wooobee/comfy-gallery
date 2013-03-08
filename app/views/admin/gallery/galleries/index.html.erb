@@ -1,32 +1,36 @@
-<%= link_to 'Add new gallery', new_admin_gallery_gallery_path, :class => 'big button' %>
+<div class="page-header">
+  <%= link_to 'Adicionar uma nova galeria', new_admin_gallery_gallery_path, :class => 'btn pull-right' %>
 
-<h1>Galleries</h1>
+  <h2>Galerias</h2>
+</div>
 
 <%= render :partial => 'cms_admin/categories/index', :object => 'SofaGallery::Gallery' if defined?(ComfortableMexicanSofa) %>
 
 <br />
 
-<table class='formatted'>
-  <tr>
-    <th> Preview </th>
-    <th> Name </th>
-    <th> Actions </th>
-  </tr>
-  <% @galleries.each do |gallery| %>
+<table class='table table-hover table-bordered'>
+  <tbody class="sortable">
     <tr>
-      <td class='preview'>
-        <% gallery.photos.limit(1).each do |photo| %>
-          <%= image_tag(photo.image.url(:admin_thumb)) %>
-        <% end %>
-      </td>
-      <td class='main'>
-        <%= link_to gallery.title, admin_gallery_gallery_photos_path(gallery) %>
-      </td>
-      <td class='action_links'>
-        <%= link_to 'Show Photos', admin_gallery_gallery_photos_path(gallery) %>
-        <%= link_to 'Edit', edit_admin_gallery_gallery_path(gallery) %>
-        <%= link_to 'Delete', admin_gallery_gallery_path(gallery), :method => :delete, :confirm => 'Are you sure?' %>
-      </td>
+      <th> Preview </th>
+      <th> Nome </th>
+      <th> Actions </th>
     </tr>
-  <% end %>
+    <% @galleries.each do |gallery| %>
+      <tr>
+        <td class='preview'>
+          <% gallery.photos.limit(1).each do |photo| %>
+            <%= image_tag(photo.image.url(:admin_thumb)) %>
+          <% end %>
+        </td>
+        <td class='main'>
+          <%= link_to gallery.title, admin_gallery_gallery_photos_path(gallery) %>
+        </td>
+        <td class='action_links'>
+          <%= link_to 'Show Photos', admin_gallery_gallery_photos_path(gallery) %>
+          <%= link_to 'Edit', edit_admin_gallery_gallery_path(gallery) %>
+          <%= link_to 'Delete', admin_gallery_gallery_path(gallery), :method => :delete, :confirm => 'Are you sure?' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
