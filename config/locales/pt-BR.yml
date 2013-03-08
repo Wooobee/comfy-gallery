@@ -10,6 +10,7 @@ pt-BR:
   activerecord:
     models:
       gallery/gallery: "Galeria"
+      gallery/photo: "Foto"
     attributes:
       gallery/gallery:
         identifier: Identificador
@@ -19,3 +20,7 @@ pt-BR:
         full_height: Altura Máxima
         thumb_width: Largura da miniatura
         thumb_height: Altura da miniatura
+      gallery/photo:
+        title: Título da Foto
+        image: Imagem
+        description: Descrição

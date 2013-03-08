@@ -9,4 +9,6 @@
 <%= form.file_field :image, :multiple => true %>
 <%= form.text_area :description, :class => 'short' %>
 
-<%= form.submit 'Save' %>
+<div class="form-actions">
+	<%= form.submit "Salvar", :class => 'btn btn-primary' %>
+</div>

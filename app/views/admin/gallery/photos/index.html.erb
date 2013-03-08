@@ -1,8 +1,10 @@
-<%= link_to 'Add new photo', new_admin_gallery_gallery_photo_path(@gallery), :class => 'big button' %>
+<div class="page-header">
+  <%= link_to 'Adicionar uma nova foto', new_admin_gallery_gallery_photo_path(@gallery), :class => 'btn pull-right' %>
+  <h2>Fotos em <%=@gallery.title%></h2>
+</div>
 
-<h1>Photos in <%=@gallery.title%></h1>
 
-<table class='formatted'>
+<table class='table table-hover table-bordered'>
   <tbody class='sortable'>
     <% @photos.each do |photo| %>
       <tr id='<%= dom_id(photo) %>'>
@@ -13,9 +15,9 @@
           <div class='title'><%= photo.title %></div>
         </td>
         <td class='action_links'>
-          <%= link_to 'Crop', crop_admin_gallery_gallery_photo_path(@gallery, photo) if photo.force_aspect? %>
-          <%= link_to 'Edit', edit_admin_gallery_gallery_photo_path(@gallery, photo) %>
-          <%= link_to 'Delete', admin_gallery_gallery_photo_path(@gallery, photo), :method => :delete, :confirm => 'Are you sure?' %>
+          <%= link_to 'Cortar', crop_admin_gallery_gallery_photo_path(@gallery, photo), :class => "btn btn-small btn-primary" if photo.force_aspect? %>
+          <%= link_to 'Editar', edit_admin_gallery_gallery_photo_path(@gallery, photo), :class => "btn btn-small" %>
+          <%= link_to 'Excluir', admin_gallery_gallery_photo_path(@gallery, photo), :method => :delete, :confirm => 'Tem certeza?', :class => "btn btn-small btn-danger" %>
         </td>
       </tr>
     <% end %>

@@ -35,18 +35,20 @@
   </script>
 <% end %>
 
-<h1> Crop Photo </h1>
+<div class="page-header">
+  <h2>Cortar foto</h21>
+</div>
 
 <%= comfy_gallery_form_for @photo, :as => :photo, :url => { :action => :update } do |form| %>
 
   <% if @photo.gallery.force_ratio_full? %>
-    <%= form.simple_field 'Full Size' do %>
+    <%= form.simple_field 'Tamanho total' do %>
       <%= image_tag @photo.image.url(:admin_full), :id => 'crop_full' %>
     <% end %>
   <% end %>
   <br />
   <% if @photo.gallery.force_ratio_thumb? %>
-    <%= form.simple_field 'Thumbnail' do %>
+    <%= form.simple_field 'Miniatura' do %>
       <%= image_tag @photo.image.url(:admin_full), :id => 'crop_thumb' %>
     <% end %>
   <% end %>
@@ -59,6 +61,7 @@
   <% [:thumb_crop_x, :thumb_crop_y, :thumb_crop_w, :thumb_crop_h].each do |attr| %>
     <%= form.hidden_field attr, :id => attr %>
   <% end %>
-  
-  <%= form.submit 'Crop' %>
+  <div class="form-actions">
+    <%= form.submit "Cortar", :class => 'btn btn-primary' %>
+  </div>
 <% end %>

@@ -10,6 +10,6 @@ ComfyGallery.configure do |config|
   #   config.admin_controller = 'ApplicationController'
   
   # Form builder
-  #   config.form_builder = 'ComfyGallery::FormBuilder'
+  config.form_builder = 'ComfyGallery::FormBuilder'
   
 end

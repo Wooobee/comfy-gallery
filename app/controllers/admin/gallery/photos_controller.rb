@@ -28,10 +28,10 @@ class Admin::Gallery::PhotosController < Admin::Gallery::BaseController
       @photo.save!
     end
     
-    flash[:notice] = 'Photo created'
+    flash[:notice] = 'Foto cadastrada'
     redirect_to :action => :index
   rescue ActiveRecord::RecordInvalid
-    flash[:error] = 'Failed to create Photo'
+    flash[:error] = 'Erro ao cadastrar a foto'
     render :action => :new
   end
   
@@ -41,16 +41,16 @@ class Admin::Gallery::PhotosController < Admin::Gallery::BaseController
   
   def update
     @photo.update_attributes!(params[:gallery_photo])
-    flash[:notice] = 'Photo updated'
+    flash[:notice] = 'Foto atualizada'
     redirect_to :action => :index
   rescue ActiveRecord::RecordInvalid
-    flash.now[:error] = 'Failed to updated Photo'
+    flash.now[:error] = 'Erro ao atualizar a foto'
     render :action => :edit
   end
   
   def destroy
     @photo.destroy
-    flash[:notice] = 'Photo deleted'
+    flash[:notice] = 'Foto excluida'
     redirect_to :action => :index
   end
   
@@ -72,14 +72,14 @@ protected
   def load_gallery
     @gallery = Gallery::Gallery.find(params[:gallery_id])
   rescue ActiveRecord::RecordNotFound
-    flash[:error] = 'Gallery not found'
+    flash[:error] = 'Galeria não encontrada'
     redirect_to admin_gallery_galleries_path
   end
   
   def load_photo
     @photo = @gallery.photos.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    flash[:error] = 'Photo not found'
+    flash[:error] = 'Foto não encontrada'
     redirect_to :action => :index
   end
   

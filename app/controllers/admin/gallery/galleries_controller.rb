@@ -17,10 +17,10 @@ class Admin::Gallery::GalleriesController < Admin::Gallery::BaseController
   
   def create
     @gallery.save!
-    flash[:notice] = 'Gallery created'
+    flash[:notice] = 'Galeria cadastrada'
     redirect_to :action => :index
   rescue ActiveRecord::RecordInvalid
-    flash.now[:error] = 'Failed to create Gallery'
+    flash.now[:error] = 'Erro ao cadastrar a galeria'
     render :action => :new
   end
   
@@ -34,16 +34,16 @@ class Admin::Gallery::GalleriesController < Admin::Gallery::BaseController
   
   def update
     @gallery.update_attributes!(params[:gallery])
-    flash[:notice] = 'Gallery updated'
+    flash[:notice] = 'Galeria atualizada'
     redirect_to :action => :index
   rescue ActiveRecord::RecordInvalid
-    flash.now[:error] = 'Failed to update Gallery'
+    flash.now[:error] = 'Erro ao atualizar a galeria'
     render :action => :edit
   end
   
   def destroy
     @gallery.destroy
-    flash[:notice] = 'Gallery deleted'
+    flash[:notice] = 'Galeria excluida'
     redirect_to :action => :index
   end
   
@@ -52,7 +52,7 @@ protected
   def load_gallery
     @gallery = Gallery::Gallery.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    flash[:error] = 'Gallery not found'
+    flash[:error] = 'Galeria não encontrada'
     redirect_to :action => :index
   end
   
