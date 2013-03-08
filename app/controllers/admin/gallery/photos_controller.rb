@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Admin::Gallery::PhotosController < Admin::Gallery::BaseController
   
   before_filter :load_gallery
